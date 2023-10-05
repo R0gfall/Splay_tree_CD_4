@@ -287,7 +287,7 @@ Splay_tree_number* create_string(char symbol, char str_of_symbols[100], Splay_tr
 	
 
 	//Splay_tree_number* start_new = start;
-	char separator[] = "// , ; () {} [] & ? *-+= |/ > < !^ ~";
+	char separator[] = ", ; ) ]";
 	char slesh = -1;
 	char numbers_s[] = "0123456789ABCDEFabcdefU";
 	char number_with_out_0x[98] = "";
@@ -307,6 +307,11 @@ Splay_tree_number* create_string(char symbol, char str_of_symbols[100], Splay_tr
 	}
 
 	if (str_of_symbols[0] == '0' && str_of_symbols[1] == 'x') {
+		if (!(strchr(numbers_s, str_of_symbols[2]))) {
+			memset(str_of_symbols, 0, 100);
+			return start;
+		}
+
 		if (strchr(numbers_s, symbol)) {
 			int i = 0;
 			while (str_of_symbols[i]) i++;
