@@ -285,7 +285,8 @@ void print_splay_tree(Splay_tree_number* start) {
 
 Splay_tree_number* create_string(char symbol, char str_of_symbols[100], Splay_tree_number* start) {
 	
-
+	
+	//int qwe = 0x1fU;
 	//Splay_tree_number* start_new = start;
 	char separator[] = ", ; ) ]";
 	char slesh = -1;
@@ -344,6 +345,8 @@ int main(int argc, char** argv)
 	Splay_tree_number* start = NULL;
 	FILE* inp = fopen("test_0.c", "r");
 	
+	//FileName.cpp
+
 	char keyword[100] = "";
 	char c, prev_c = ' ';
 	char single_comm = 0, multi_comm = 0, symbol = 0, str_const = 0, multi_comm_opened = 0, multi_comm_closed = 0, back_slash_count = 0;
@@ -352,7 +355,7 @@ int main(int argc, char** argv)
 		c = fgetc(inp);
 		start = create_string(c, keyword, start);
 	}*/
-
+	//
 	//printf("%s\n", start);
 
 	while (!feof(inp)) {
